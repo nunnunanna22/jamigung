@@ -19,11 +19,14 @@
         display: flex;
         justify-content: center;
         background-image: url("./background.png");
+        background-repeat :no-repeat;
       }
       .container {
         width: 390px;
-        background-color: skyblue;
         height: 100%;
+        background-color: skyblue;
+        background-size: cover;
+        justify-content: center;
       }
       .photos {
         margin-top: 30px;
@@ -73,90 +76,36 @@
         bottom: 150px;
         transform: translate(-50%);
         left: 50%;
-        opacity: 0;
-      }
-      .showText {
-        opacity: 0;
-      }
-      .hideText {
-	    opacity: 1;
-        transition: opacity 0.5s linear;
       }
     </style>
-    <script>
-    function showText(number) {
-        if (number === 1) {
-            document.querySelector("#desc1").classList.remove("hideText");
-            document.querySelector("#desc1").classList.add("showText");
-        } else if (number === 2) {
-            document.querySelector("#desc2").classList.remove("hideText");
-            document.querySelector("#desc2").classList.add("showText");
-        } else if (number === 3) {
-            document.querySelector("#desc3").classList.remove("hideText");
-            document.querySelector("#desc3").classList.add("showText");
-        } else {
-            document.querySelector("#desc4").classList.remove("hideText");
-            document.querySelector("#desc4").classList.add("showText");
-        }
-    }
-    function hideText(number) {
-        if (number === 1) {
-            document.querySelector("#desc1").classList.remove("showText");
-            document.querySelector("#desc1").classList.add("hideText");
-        } else if (number === 2) {
-            document.querySelector("#desc2").classList.remove("showText");
-            document.querySelector("#desc2").classList.add("hideText");
-        } else if (number === 3) {
-            document.querySelector("#desc3").classList.remove("showText");
-            document.querySelector("#desc3").classList.add("hideText");
-        } else {
-            document.querySelector("#desc4").classList.remove("hideText");
-            document.querySelector("#desc4").classList.add("showText");
-        }
-    }
-    function alertText(number) {
-        alert(`9명이 모이는 그날까지...`);
-    }
-    </script>
   </head>
   <body>
     <div class="container">
       <div class="photos">
-        <div id="image1" class="photo-frame"
-            onmouseover="hideText(1)"
-            onmouseout="showText(1)"
-            onclick="alertText(1)">
+        <div id="image1" class="photo-frame">
           <span id="desc1" class="photo-description">
             쁘이 (^,^)V
           </span>
         </div>
-        <div id="image2" class="photo-frame"
-            onmouseover="hideText(2)"
-            onmouseout="showText(2)"
-            onclick="alertText(2)">
+        <div id="image2" class="photo-frame">
           <span id="desc2" class="photo-description">
             루피-피스 (-,-)Λ
           </span>
         </div>
-        <div id="image3" class="photo-frame"
-            onmouseover="hideText(3)"
-            onmouseout="showText(3)"
-            onclick="alertText(3)">
+        <div id="image3" class="photo-frame">
           <span id="desc3" class="photo-description">
             k-하트 v(^,^)v
           </span>
         </div>
-        <div id="image4" class="photo-frame"
-            onmouseover="hideText(4)"
-            onmouseout="showText(4)"
-            onclick="alertText(4)">
+        <div id="image4" class="photo-frame">
           <span id="desc4" class="photo-description">
-            볼 하투 S(-,^)2
+            볼 하투 S(>,^)2
           </span>
         </div>
       </div>
       <div class="footer">
         <p class="f-title">🌾 제 7회 자미궁 여행: 부여편 🌾</p>
+        <p class="f-date">9명이 모이는 그날까지...</p>
         <p class="f-date">221001-221003</p>
       </div>
       </div>
