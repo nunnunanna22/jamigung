@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나루터네컷</title>
+    <style>
+      @font-face {
+        font-family: "LeeSeoyun";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+        body {
+            font-family: "LeeSeoyun";
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-image: url("./background.png");
+        }
+
+        .container {
+            width: 390px;
+            background-color: skyblue;
+            height: 100%;
+            margin: 50px;
+        }
+
+        .photos{
+            margin-top: 30px;
+        }
+
+        .photo-frame {
+            background-color: white;
+            margin: 15px 20px;
+            height: 200px;
+
+            background-size: cover;
+            position: relative;
+
+            cursor: pointer;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .f-title {
+            color: white;
+            font-size: 25px;
+            font-weight: 900px;
+        }
+
+        .f-date {
+            color: white;
+            font-size: 15px;
+            font-weight: 500px;
+        }
+
+        #image1 {
+            background-image: url("./img1.png");
+        }
+
+        #image2 {
+            background-image: url("./img2.png");
+        }
+
+        #image3 {
+            background-image: url("./img3.png");
+        }
+
+        #image4 {
+            background-image: url("./img4.png");
+        }
+
+        .photo-description {
+            color: white;
+            background-color: skyblue;
+
+            width: fit-content;
+            padding: 0 20px;
+
+            border-radius: 10px;
+            position: absolute;
+            bottom: 150px;
+
+            transform: translate(-50%);
+            left: 50%;
+
+            opacity: 0%;
+        }
+
+        .showText {
+	        opacity: 0;
+        }
+
+        .hideText {
+	        opacity: 1;
+            transition: opacity 0.5s linear;
+        }
+    </style>
+    <script>
+        function showText(number) {
+        if (number === 1) {
+            document.querySelector("#desc1").classList.remove("hideText");
+            document.querySelector("#desc1").classList.add("showText");
+        } else if (number === 2) {
+            document.querySelector("#desc2").classList.remove("hideText");
+            document.querySelector("#desc2").classList.add("showText");
+        } else if (number === 3 ) {
+            document.querySelector("#desc3").classList.remove("hideText");
+            document.querySelector("#desc3").classList.add("showText");
+        } else if (number === 4) {
+            document.querySelector("#desc4").classList.remove("showText");
+            document.querySelector("#desc4").classList.add("hideText");
+        }
+        }
+
+        function hideText(number) {
+        if (number === 1) {
+            document.querySelector("#desc1").classList.remove("showText");
+            document.querySelector("#desc1").classList.add("hideText");
+        } else if (number === 2) {
+            document.querySelector("#desc2").classList.remove("showText");
+            document.querySelector("#desc2").classList.add("hideText");
+        } else if (number === 3 ) {
+            document.querySelector("#desc3").classList.remove("showText");
+            document.querySelector("#desc3").classList.add("hideText");
+        } else if (number === 4) {
+            document.querySelector("#desc4").classList.remove("showText");
+            document.querySelector("#desc4").classList.add("hideText");
+        }
+        }
+
+    function alertText(number) {
+        alert(`9명이 모이는 그날까지...`);
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="photos">
+            <div id="image1" class="photo-frame"
+                onmouseover="hideText(1)"
+                onmouseout="showText(1)"
+                onclick="alertText(1)"
+            >
+                <span id="desc1" class="photo-description">
+                    쁘이 (^,^)V
+                </span>
+            </div>
+            <div id="image2" class="photo-frame"
+                onmouseover="hideText(2)"
+                onmouseout="showText(2)"
+                onclick="alertText(2)"
+            >
+                <span id="desc2" class="photo-description">
+                    루피-피스 (-,-)Λ
+                </span>
+            </div>
+            <div id="image3" class="photo-frame"
+                onmouseover="hideText(3)"
+                onmouseout="showText(3)"
+                onclick="alertText(3)"
+            >
+                <span id="desc3" class="photo-description">
+                    k-하트 v(^,^)v
+                </span>
+            </div>
+            <div id="image4" class="photo-frame"
+                onmouseover="hideText(4)"
+                onmouseout="showText(4)"
+                onclick="alertText(4)"
+            >
+                <span id="desc4" class="photo-description">
+                    볼 하투 S(-,^)2
+                </span>
+            </div>
+        </div>
+    <div class="footer">
+        <p class="f-title">🌾 제 7회 자미궁 정기 모임 : 부여편 🌾</p>
+        <p class="f-date">221001-221003</p>
+    </div>
+    </div>
+</body>
+</html>
